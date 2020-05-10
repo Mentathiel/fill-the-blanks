@@ -1,3 +1,8 @@
+#prompt {
+	padding: 20%;
+}
+
+
 #card-container{
 	position: fixed;
 	left: 50%;
@@ -8,6 +13,8 @@
 }
 
 .card{
+	max-width: 20%;
+
 	margin: 0 2% 0 2%;
 
 	background-color: beige;
