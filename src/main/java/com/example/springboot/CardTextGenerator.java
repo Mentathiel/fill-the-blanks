@@ -1,5 +1,8 @@
 package com.example.springboot;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -8,6 +11,7 @@ import java.util.LinkedList;
 import java.util.Random;
 import java.util.Scanner;
 
+@Component
 public class CardTextGenerator {
     private LinkedList<String> prompts;
     private LinkedList<String> cards;
