@@ -23,18 +23,20 @@ public class CardController {
 
     @GetMapping("/black")
     public String black(Model model){
+        model.addAttribute("textsubmission", new TextSubmission());
         model.addAttribute("black", cg.getAllPrompts());
         return "black";
     }
 
-    @PostMapping("/black")
-    public String addBlack(@RequestParam(name="prompt", required=false, defaultValue="") String prompt, Model model){
-        if(prompt != "") {
-            cg.addPrompt(prompt);
-            model.addAttribute("black", cg.getAllPrompts());
-        }
-        return "black";
-    }
+//    @PostMapping("/black")
+//    public String addBlack(@ModelAttribute TextSubmission txt, Model model){
+//        model.addAttribute("textsubmission", txt);
+//        if(txt.getText() != "" && txt.getText() != null) {
+//            cg.addPrompt(txt.getText());
+//        }
+//        model.addAttribute("black", cg.getAllPrompts());
+//        return "black";
+//    }
 
     @GetMapping("/white")
     public String white(Model model){
@@ -43,12 +45,12 @@ public class CardController {
         return "white";
     }
 
-    @PostMapping("/white")
-    public String white(@RequestParam(name="card", required=false, defaultValue="") String card, Model model){
-        if(card != "") {
-            cg.addCard(card);
-            model.addAttribute("white", cg.getAllCards());
-        }
-        return "white";
-    }
+//    @PostMapping("/white")
+//    public String white(@ModelAttribute TextSubmission txt, Model model){
+//        if(txt.getText() != "") {
+//            cg.addPrompt(txt.getText());
+//            model.addAttribute("white", cg.getAllCards());
+//        }
+//        return "white";
+//    }
 }
